@@ -1,0 +1,17 @@
+s" lib.fs" included
+s" 1.txt"  load-data data
+
+( day 2 )
+: sweep-three  0  3 0 do  over i cells + @ + loop ;
+: collect      dup 3 cells + @ if sweep-three , then ;
+: sweep        here ['] collect data for-each ;
+
+( day 1 )
+: depth<       dup cell - @   over @  < ;
+: collect      swap depth< if 1 else 0 then rot + ;
+: solve        ['] collect swap cell + 0 reduce ;
+: solve        sweep solve ;
+
+solve .
+
+bye
