@@ -48,3 +48,12 @@ variable "dp "data "dp !
 ;
 
 
+: ```forth ;
+
+: ```
+  begin
+    refill
+    tib 8 s" ```forth" compare 0 =
+  until
+;
+
